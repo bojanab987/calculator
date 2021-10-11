@@ -4,10 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/main.css">
   <link rel="icon" type="image/png" href="./src/images/favicon-32x32.png">
   <title>Javascript Calculator</title>
 </head>
@@ -16,57 +12,61 @@
   <div class="calculator__wrapper">
     <header class="header">
       <div class="logo__container">
-        <h1 class="logo"></h1>
+        <h1 class="logo">calc</h1>
       </div>
       <div class="theme__group js-theme-group">
-        <label class="theme__label js-theme" for="dark">
-          <span class="theme__label-text">1</span>
-          <input type="radio" name="theme" id="dark" value="dark" class="js-theme__input-option dark" />
-        </label>
-
-        <label class="theme__label js-theme" for="light">
-          <span class="theme__label-text">2</span>
-          <input type="radio" name="theme" id="light" value="light" class="js-theme__input-option light" />
-        </label>
-
-        <label class="theme__label js-theme" for="purple">
-          <span class="theme__label-text">3</span>
-          <input type="radio" name="theme" id="purple" value="purple" class="js-theme__input-option purple" />
-        </label>
+        <span class="theme-text">THEME</span>
+        <div class="themes">
+          <div class="labels">
+            <span class="theme__label-text">1</span>
+            <span class="theme__label-text">2</span>
+            <span class="theme__label-text">3</span>
+            </div>
+            <div class="inputs">
+              <div class="inputs__actions">
+                <label class="theme__label js-theme" for="dark">
+                  <label class="theme__label js-theme" for="light">
+                    <label class="theme__label js-theme" for="purple">
+            </div>
+            <input type="radio" name="theme" id="dark" value="dark" class="js-theme__input-option theme__input dark" />
+            <input type="radio" name="theme" id="light" value="light" class="js-theme__input-option theme__input light" />
+            <input type="radio" name="theme" id="purple" value="purple" class="js-theme__input-option theme__input purple" />
+            </div>
+            </div>
       </div>
     </header>
     <main class="container">
       <div class="screen__container">
-        <div class="js-current"></div>
-        <div class="js-previous"></div>
+        <div class="js-current current"></div>
+        <div class="js-previous previous"></div>
+        </div>
         <div class="keypad__container">
-          <button class="key js-number">7</button>
-          <button class="key js-number">8</button>
-          <button class="key js-number">9</button>
-          <button class="key js-delete bg-dark small-text">DEL</button>
-          <button class="key js-number">4</button>
-          <button class="key js-number">5</button>
-          <button class="key js-number">6</button>
-          <button class="key js-operator">+</button>
-          <button class="key js-number">1</button>
-          <button class="key js-number">2</button>
-          <button class="key js-number">3</button>
-          <button class="key js-operator">-</button>
-          <button class="key js-number">.</button>
-          <button class="key js-number">0</button>
-          <button class="key js-operator">/</button>
-          <button class="key js-operator">x</button>
-          <button class="key js-reset span-two bg-dark small-text">
+          <button class="key number js-number">7</button>
+          <button class="key number  js-number">8</button>
+          <button class="key number js-number">9</button>
+          <button class="key js-delete text-key delete">DEL</button>
+          <button class="key number js-number">4</button>
+          <button class="key number js-number">5</button>
+          <button class="key number js-number">6</button>
+          <button class="key operator js-operator">+</button>
+          <button class="key number js-number">1</button>
+          <button class="key number js-number">2</button>
+          <button class="key number js-number">3</button>
+          <button class="key operator js-operator">-</button>
+          <button class="key number js-number">.</button>
+          <button class="key number js-number">0</button>
+          <button class="key operator js-operator">/</button>
+          <button class="key operator js-operator">x</button>
+          <button class="key js-reset span-two text-key">
             RESET
           </button>
-          <button class="key js-equals span-two bg-alert small-text">
+          <button class="key equals js-equals span-two">
             =
           </button>
         </div>
     </main>
   </div>
-  <script src="./src/js/theme.js"></script>
-  <script src="./src/app.js"></script>
+  <script src="./public/main.js"></script>
 </body>
 
 </html>
