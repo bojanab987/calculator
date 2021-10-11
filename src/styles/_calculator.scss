@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    margin:0;
+    padding:0;
+}
+
+body{
+    margin: 32px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-background);
+}
+
+.calculator__wrapper,.container{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow:1;
+    max-width: 460px;
+    max-height: 708px;
+}
+.calculator__wrapper{
+    margin:28px 24px;
+    gap:32px;     
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+    color:var(--text-primary);
+}
+
+.logo__container{
+    justify-self: flex-start;
+}
+.logo{
+    font-size: 32px;
+    line-height: 1.125;
+    letter-spacing: -0.53px;
+    color:var(--text-primary);    
+}
+.theme__group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+    align-items: flex-end;
+    gap:21px; 
+    font-size: 12px;
+    line-height: 1.1;}
+
+.theme-text{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.themes{    
+    display: inline-block;
+    margin-left: 21px;
+    width:71px;
+}
+
+.labels{
+    display:flex;
+    justify-content: space-around;
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--keypad-background);
+    padding-bottom: 5px;
+    margin-top:5px;
+    border-radius: 13px;
+}
+
+.theme__input{
+    cursor: pointer;
+    height:16px;
+    width:16px;
+    background-color: var(--equals-key);
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    appearance: none;
+    opacity:0;
+    margin-top: 5px;
+    &:hover::after{
+        background-color: var(--equals-key-hover);
+    }
+    &:checked{
+        opacity:1;
+        border-radius: 50%;
+    }
+    &::after{
+        height: 16px;
+        width: 16px;        
+        background: var(--equals-key);
+        display: flex;
+        content: "";
+        border-radius: 50%;       
+    }
+}
+
+.container{
+    gap:24px;
+    font-size: 28px;
+    max-width: 100%;
+    flex: 1;
+}
+.screen__container{
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-end;
+    width:100%;
+    gap:5px;
+    min-height: 88px;
+    max-height: 128px;
+    padding:26px 24px;
+    background-color: var(--screen-background);
+    color:var(--text-primary);
+    border-radius: 10px;
+    font-size: 32px;
+    line-height: 1.125;
+    letter-spacing: -0.53px;
+}
+
+.previous{
+    opacity:0.5;
+    font-size: 1.375rem;
+}
+.keypad__container{
+    background-color: var(--keypad-background);
+    padding:24px;
+    display: grid;
+    width:100%;
+    grid-template-columns: repeat(4, minmax(5vw, 101px));
+    grid-template-rows: repeat(5, minmax(5vw,64px));
+    grid-gap:13px;
+    border-radius: 10px;    
+}
+.key{    
+    font-weight: 700;
+    height:64px;    
+    border-radius: 5px; 
+    border:none;
+}
+
+.span-two{
+   grid-column: span 2;
+   width:100%;
+}
+.number, .operator{
+    background-color: var(--num-key-bckg);
+    box-shadow: var(--num-key-shadow);
+    color:var(--text-keypad-nums); 
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.47px;   
+    &:hover{
+        background-color: var(--num-key-hover);
+    }
+}
+.text-key{
+    background-color: var(--text-key-bckg);
+    box-shadow: var(--text-key-shadow);
+    color:var(--primary-white);
+    &:hover{
+        background-color: var(--text-key-hover);
+    }
+}
+
+.equals{
+    color:var(--equals-text);
+    background-color: var(--equals-key);
+    box-shadow: var(--equals-shadow);
+    &:hover{
+        background-color: var(--equals-key-hover);
+    }
+}
+
+.text-key, .equals{
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.27px;
+}
+
+@media only screen and (max-width:375px){
+    .calculator__wrapper{
+        max-width: 327px;
+    }    
+}
+
+@media only screen and (min-width:600px){
+    .screen__container{
+        font-size: 48px;
+        letter-spacing: -0.8px;
+        height: 128px;
+        padding:36px 32px;
+    }
+    .keypad__container{
+        padding: 32px;        
+    }   
+
+    .number, .operator{
+        font-size: 32px;
+        line-height: 1.125;
+        letter-spacing: -0.53px;        
+    }
+    .text-key, .equals{
+        font-size: 20px;
+        line-height: 1.1;
+        letter-spacing: -0.33px;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    body{
+        margin:96px;
+    }
+}

@@ -1,6 +1,6 @@
-
-// import { Calculator } from "./Calculator";
-
+import './js/theme';
+import { Calculator } from './js/Calculator';
+import './styles/main.scss';
 
 const numberKeys = document.querySelectorAll('.js-number');
 const operatorKeys = document.querySelectorAll('.js-operator');
@@ -8,12 +8,7 @@ const deleteKey = document.querySelector('.js-delete');
 const resetKey = document.querySelector('.js-reset');
 const equalsKey = document.querySelector('.js-equals');
 const currentEl = document.querySelector('.js-current');
-const previousEl = document.querySelector('.js-previous')
-
-
-
-import './js/theme';
-import { Calculator } from './js/Calculator';
+const previousEl = document.querySelector('.js-previous');
 
 const calc = new Calculator(currentEl, previousEl);
 
