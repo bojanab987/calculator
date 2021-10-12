@@ -9,6 +9,7 @@ const resetKey = document.querySelector('.js-reset');
 const equalsKey = document.querySelector('.js-equals');
 const currentEl = document.querySelector('.js-current');
 const previousEl = document.querySelector('.js-previous');
+const screen = document.querySelector('.js-screen');
 
 const calc = new Calculator(currentEl, previousEl);
 
@@ -16,6 +17,9 @@ numberKeys.forEach((key) => {
     key.addEventListener("click", () => {
         calc.appendNumber(key.innerText);
         calc.updateDisplay();
+        if (currentEl.offsetWidth >= screen.offsetWidth - 29) {
+            currentEl.textContent = 'max digits exceeded';
+        }
     })
 });
 
@@ -38,5 +42,15 @@ resetKey.addEventListener("click", () => {
 
 equalsKey.addEventListener("click", () => {
     calc.calculate();
-    calc.updateDisplay();
+    if (currentEl.offsetWidth >= screen.offsetWidth - 29) {
+        currentEl.textContent = 'max digits exceeded';
+        currentEl.classList.add("resize");
+        calc.clearScreen();
+        currentEl.classList.remove('resize');
+    } else {
+        calc.updateDisplay();
+    }
+    // calc.updateDisplay();
 });
+
+
